@@ -1,7 +1,6 @@
 import { getAuth, signInWithEmailAndPassword } from 'firebase/auth'
-import { incrementTry } from '../utils/block_utils'
 
-import { firebaseApp } from '../config/firebase'
+import { firebaseApp } from '../../config/firebase'
 
 const $ = document.querySelector.bind(document)
 
@@ -28,8 +27,6 @@ const onSubmitLoginForm = (event: Event) => {
       const { code } = error
 
       if (authStatuses.includes(code)) {
-        incrementTry()
-
         let errorParagraph = <HTMLParagraphElement>$('#error-message')
         if (!errorParagraph) {
           errorParagraph = <HTMLParagraphElement>document.createElement('p')
@@ -38,7 +35,6 @@ const onSubmitLoginForm = (event: Event) => {
 
           const app = <HTMLDivElement>$('#app')
           app.insertAdjacentElement('beforeend', errorParagraph)
-
         }
       } else {
         console.log(code)
@@ -48,23 +44,28 @@ const onSubmitLoginForm = (event: Event) => {
 
 const renderLoginForm = (container: HTMLElement) => {
   const htmlContent = `
-    <form id="login-form">
-      <div class="form-input">
-        <label for="email">E-mail</label>
-        <input type="email" id="email" name="email" required>
-      </div>
+    <div id="login" class="screen">
+      <form id="form">
+        <h2>Há quanto tempo!</h2>
+        
+        <div class="form-input">
+          <label for="email">E-mail</label>
+          <input placeholder="Digite seu e-mail" type="email" id="email" name="email" required />
+        </div>
 
-      <div class="form-input">
-        <label for="email">Senha</label>
-        <input type="password" id="password" name="password" required>
-      </div>
+        <div class="form-input">
+          <label for="password">Senha</label>
+          <input placeholder="Digite sua senha" type="password" id="password" name="password" required />
+          <span id="suspicious-message">Cuidado com quem olha por cima dos seus ombros&hellip;</span>
+        </div>
 
-      <button>Entrar</button>
-    </form>
+        <button class="botao">Entrar</button>
+      </form>
+    </div>
   `
 
   container.innerHTML = htmlContent
-  const loginForm = <HTMLFormElement>$('#login-form')
+  const loginForm = <HTMLFormElement>$('#form')
   loginForm.onsubmit = onSubmitLoginForm
 }
 

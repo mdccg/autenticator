@@ -1,0 +1,12 @@
+h1 {
+  font-family: 'Koulen';
+  font-size: 300%;
+}
+
+#welcome {
+  box-sizing: border-box;
+  padding: 32px 64px 64px;
+
+  justify-content: space-between;
+  flex: 1;
+}

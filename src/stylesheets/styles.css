@@ -1,0 +1,221 @@
+@import url('./fonts.css');
+@import url('./palette.css');
+
+:root {
+  --box-shadow: /* https://shadows.brumm.af/ */
+    2.8px 2.8px 2.2px rgba(0, 0, 0, 0.02),
+    6.7px 6.7px 5.3px rgba(0, 0, 0, 0.028),
+    12.5px 12.5px 10px rgba(0, 0, 0, 0.035),
+    22.3px 22.3px 17.9px rgba(0, 0, 0, 0.042),
+    41.8px 41.8px 33.4px rgba(0, 0, 0, 0.05),
+    100px 100px 80px rgba(0, 0, 0, 0.07);
+}
+
+body {
+  margin: 0;
+  font-family: 'Fira Sans';
+}
+
+html, body, #app, .screen {
+  flex-direction: column;
+  display: flex;
+  min-height: 100vh;
+} 
+
+#login, #signup {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+
+  background-color: var(--clouds);
+}
+
+#form {
+  flex-direction: column;
+  display: flex;
+  padding: 32px;
+  border-radius: 8px;
+  box-shadow: var(--box-shadow);
+  background-color: white;
+  width: 384px;
+  max-width: 82.25vw;
+}
+
+#form > *:not(:last-child) {
+  margin-bottom: 16px;
+}
+
+#form h2 {
+  color: var(--dracula);
+  font-size: 175%;
+
+  text-align: center;
+
+  margin-top: 0;
+}
+
+.form-input {
+  flex-direction: column;
+  display: flex;
+}
+
+.form-input label {
+  margin-bottom: 8px;
+
+  font-weight: bold;
+  font-size: 125%;
+  color: var(--dracula-orchid);
+}
+
+.form-input input,
+#form button,
+#form input[type='submit'] {
+  height: 48px;
+}
+
+.form-input input {
+  outline: none;
+  border: none;
+  
+  border: 1px solid var(--city-lights);
+  border-radius: 4px;
+  
+  padding: 0 8px;
+  
+  font-family: 'Fira Sans';
+  color: var(--dracula-orchid);
+  font-size: 125%;
+
+  transition: all 0.5s;
+}
+
+.form-input input::placeholder {
+  color: var(--soothing-breeze);
+}
+
+.form-input input:focus {
+  border: 1px solid var(--dracula);
+}
+
+#form button,
+#form input[type='submit'] {
+  border: none;
+  outline: none;
+  
+  background-color: var(--dracula);
+  border-radius: 4px;
+  
+  font-family: 'Fira Sans';
+  color: white;
+  font-size: 125%;
+
+  font-weight: bold;
+  
+  cursor: pointer;
+}
+
+.botao {
+  opacity: 0.85;
+
+  transition: all 0.5s;
+}
+
+.botao:hover,
+.botao:focus {
+  opacity: 0.9;
+}
+
+.botao:active {
+  opacity: 1;
+}
+
+#sign-invite {
+  display: flex;
+
+  position: absolute;
+  bottom: 24px;
+
+  font-size: 125%;
+}
+
+#sign-invite span {
+  color: var(--dracula-orchid);
+
+  margin-right: 8px;
+}
+
+#sign-invite a {
+  text-decoration: none;
+
+  color: var(--dracula);
+
+  font-weight: bold;
+}
+
+#suspicious-message {
+  margin-top: 8px;
+  font-size: 80%;
+  font-weight: bold;
+  color: var(--american-river);
+  line-height: 1.5;
+}
+
+#error-message {
+  position: absolute;
+  right: 32px;
+  top: 16px;
+
+  border-left: 12px solid var(--pomegranate);
+  background-color: var(--alizarin);
+  box-shadow: var(--box-shadow);
+  box-sizing: content-box;
+  border-radius: 4px;
+  padding: 16px 32px;
+  opacity: 0.75;
+  
+  color: white;
+  font-size: 125%;
+
+  font-weight: bold;
+  
+  transition: all 0.5s;
+}
+
+#buttons {
+  display: flex;
+}
+
+#buttons > * {
+  margin-right: 16px;
+}
+
+#home-button,
+#logout-button,
+#about-link {
+  text-decoration: none;
+  background-color: var(--alizarin);
+  color: white;
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: 125%;
+  width: fit-content;
+  padding: 8px 24px;
+  box-shadow:
+    6.7px 6.7px 5.3px rgba(0, 0, 0, 0.028),
+    22.3px 22.3px 17.9px rgba(0, 0, 0, 0.042),
+    100px 100px 80px rgba(0, 0, 0, 0.07);
+}
+
+#home-button {
+  background-color: var(--green-darner-tail);
+}
+
+#about-link {
+  background-color: var(--green-darner-tail);
+}
+
+@media only screen and (max-width: 768px) {
+  #form {
+    border-radius: 0;
+  }
+}

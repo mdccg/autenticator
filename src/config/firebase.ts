@@ -1,7 +1,5 @@
 import { initializeApp } from 'firebase/app'
 
-export const LOGIN_TRIES_LIMIT = 5
-
 const firebaseConfig = {
   apiKey: "AIzaSyBG4jOG1OC_mKLiy0T1rLj9tQ_-SyAtxio",
   authDomain: "cpw1-93d13.firebaseapp.com",

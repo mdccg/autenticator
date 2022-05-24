@@ -1,0 +1,35 @@
+#login-message-area {
+  display: none;
+
+  border-left: 16px solid var(--nephritis);
+  background-color: var(--emerald);
+  box-shadow: var(--box-shadow);
+  border-radius: 4px;
+  opacity: .9;
+
+  position: absolute;
+  left: 32px;
+  top:  32px;
+
+  padding: 24px;
+
+  color: white;
+  font-size: 112%;
+}
+
+#login-message-area p {
+  margin: 0;
+  margin-bottom: 8px;
+}
+
+#login-message-area a {
+  text-decoration: none;
+  
+  color: inherit;
+  font-size: 125%;
+  font-weight: bold;
+}
+
+#error-message {
+  display: none;
+}
